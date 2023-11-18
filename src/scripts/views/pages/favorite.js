@@ -10,8 +10,6 @@ const Favorite = {
   async afterRender() {
     const restos = await RestaurantSource.DaftarRestaurant();
     console.log(restos);
-
-    // TODO: tampilkan movies di dalam DOM
   },
 
 };

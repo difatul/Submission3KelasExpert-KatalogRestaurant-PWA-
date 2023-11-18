@@ -171,9 +171,15 @@ a{
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url('../public/images/heros/hero-image_4.jpg');
+  background-image: url('../public/images/hero-image_4-large.jpg');
   background-position: center;
   background-color: black;
+}
+
+@media screen and (max-width: 767px) {
+  .jum {
+    background-image: url("../public/images/hero-image_4-small.jpg");
+  }
 }
 
 .jum-inner {

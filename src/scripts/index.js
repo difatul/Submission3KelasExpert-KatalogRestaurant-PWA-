@@ -4,6 +4,14 @@ import '../styles/responsive.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
+// eslint-disable-next-line no-unused-vars
+const START = 10;
+// eslint-disable-next-line no-unused-vars
+const NUMBER_OF_IMAGES = 100;
+
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
   drawer: document.querySelector('#navigationDrawer'),

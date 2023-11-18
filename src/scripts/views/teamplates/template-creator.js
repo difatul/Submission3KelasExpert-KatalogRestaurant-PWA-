@@ -3,7 +3,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantItemTemplate = (resto) => `
   <div class="resto-item">
     <div class="resto-item__header">
-      <img class="resto-item__header__poster" alt="${resto.pictureId}"
+      <img class="resto-item__header__poster" lazyload" alt="${resto.pictureId}"
            src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" crossorigin="anonymous">
       <div class="resto-item__header__rating">
         <p>⭐️<span class="resto-item__header__rating__score">${resto.rating}</span></p>
@@ -18,7 +18,7 @@ const createRestaurantItemTemplate = (resto) => `
 
 const createRestaurantDetailTemplate = (resto) => `
 <h2 class="resto__title">${resto.name}</h2>
-<img class="resto__poster" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.pictureId}" crossorigin="anonymous"/>
+<img class="resto__poster" lazyload" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.pictureId}" crossorigin="anonymous"/>
 <div class="resto__info">
   <h3>Information</h3>
   <h4>Tagline</h4>
@@ -69,13 +69,13 @@ const createRestaurantDetailTemplate = (resto) => `
     .join('')}
 `;
 
-const createLikeButtonTemplate = () => `
+const createLikeRestaurantButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
+const createUnlikeRestaurantButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
@@ -84,6 +84,6 @@ const createLikedButtonTemplate = () => `
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 };
